@@ -1,0 +1,41 @@
+<script src="/js/produto/cadastrar.js" ></script>
+
+<form>
+    <div class="d-flex justify-content-center">
+        <div style="padding: 10%;">
+            <div class="mb-3">
+                <label for="inputCodigo" class="form-label">Codigo</label>
+                <input  id="inputCodigo" type="text" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="inputDescricao" class="form-label">Descrição</label>
+                <input  id="inputDescricao" type="text" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class=" mb-3">
+                <label for="selTipo" class="form-label">Tipo</label>
+                <select id="selTipo" class="form-select" aria-label="Default select example">
+                    <option selected>--Selecione--</option>
+                    <% for(let i = 0; i<listaTipo.length; i++) { %>
+                        <option value="<%=listaTipo[i].tipoId%>"><%= listaTipo[i].tipoNome %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="selTamanho" class="form-label">Tamanho</label>
+                <select id="selTamanho" class="form-select" aria-label="Default select example">
+                    <option selected>--Selecione--</option>
+                    <% for(let i = 0; i<listaTamanho.length; i++) { %>
+                        <option value="<%=listaTamanho[i].tamanhoId%>"><%= listaTamanho[i].tamanhoNome %></option>
+                    <% } %>
+                </select>
+            </div>
+            <label for="inputValor" class="form-label">Valor</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <span class="input-group-text">0.00</span>
+                <input id="inputValor" type="number" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+            </div>
+            <button type="submit" id="btnGravar" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </div>
+</form>
